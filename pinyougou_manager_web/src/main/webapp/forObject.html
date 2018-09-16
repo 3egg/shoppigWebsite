@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>forEachObject</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    <script>
+        var app = angular.module('myApp', []); //定义了一个叫myApp的模块
+        app.controller('myController', function ($scope) {
+            $scope.list = [
+                {name: 'three', math: 100, English: 99},
+                {name: 'four', math: 150, English: 199},
+                {name: 'five', math: 120, English: 93},
+            ];
+            //上面是定义了一个list数组对象集合
+        });
+    </script>
+</head>
+<body ng-app="myApp" ng-controller="myController">
+<table>
+    <tr>
+        <td>姓名</td>
+        <td>数学</td>
+        <td>英语</td>
+    </tr>
+    <tr ng-repeat="entity in list">
+        <td>{{entity.name}}</td>
+        <td>{{entity.math}}</td>
+        <td>{{entity.English}}</td>
+    </tr>
+</table>
+</body>
+</html>
